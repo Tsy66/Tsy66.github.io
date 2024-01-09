@@ -92,7 +92,7 @@ function weekWeather(data, cityNum) {
         const day = new Date(today.getTime() + i * oneDay);
         const dayName = getDayName(day);
         const formattedDate = getFormattedDate(day);
-        row.setAttribute('data-other-info', `降水量: ${weather[1].time[timeIndex].elementValue[0].value} mm\n體感溫度: ${weather[3].time[timeIndex].elementValue[0].value} °C\n紫外線指數: ${weather[5].time[timeIndex].elementValue[0].value}\n能見度: ${weather[7].time[timeIndex].elementValue[0].value} km\n濕度: ${weather[0].time[timeIndex].elementValue[0].value} %`);
+        row.setAttribute('data-other-info', `降水量: ${weather[1].time[timeIndex].elementValue[0].value} mm\n體感溫度: ${weather[3].time[timeIndex].elementValue[0].value} °C\n紫外線指數: ${weather[5].time[timeIndex].elementValue[0].value}\n能見度: ${weather[7].time[timeIndex].elementValue[0].value} km\n`);
 
         if (i === 0) {
             row.innerHTML = `
