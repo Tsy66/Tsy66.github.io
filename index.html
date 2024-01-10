@@ -681,7 +681,6 @@
     </section>
 
 
-
     <!-- Disqus留言板 -->
     <section id="留言板">
         <div class="container">
@@ -714,6 +713,10 @@
         本網頁最佳設定為全螢幕
     </footer>
 
+    <div id="scrollToTopBtn" class="scroll-to-top-btn">
+        <img src="images/up.png" alt="Scroll to Top">
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/jquery.bookblock.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -731,6 +734,28 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            // 監聽捲動事件
+            window.addEventListener('scroll', function () {
+                // 如果滾動到最下層，顯示按鈕；否則隱藏按鈕
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            // 監聽按鈕點擊事件，捲動到頁面頂部
+            scrollToTopBtn.addEventListener('click', function () {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            });
+        });
+    </script>
 
 
 </body>
